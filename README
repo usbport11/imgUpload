@@ -1,4 +1,4 @@
-imgUploader provides enhancements to upload image to mediawiki article directly by drag&drop
+imgUpload provides enhancements to upload image to mediawiki article directly by drag&drop
 
 # This extension requires MediaWiki 1.32 or higher (can not justify this).
 

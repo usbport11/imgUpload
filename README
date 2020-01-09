@@ -1,0 +1,23 @@
+imgUploader provides enhancements to upload image to mediawiki article directly by drag&drop
+
+# This extension requires MediaWiki 1.32 or higher (can not justify this).
+
+For installation, once the code is copied into your extensions directory, you can load it for your
+wiki by adding to LocalSettings.php the line:
+wfLoadExtension('imgUpload');
+	
+Additions in LocalSettings.php
+//enable uploads
+$wgEnableUploads = true;
+//allow upload files to anyone (for tests only)
+$wgGroupPermissions['*']['upload'] = true;
+//allow images filetypes
+$wgFileExtensions = array('png', 'gif', 'jpg', 'jpeg', 'tiff', 'bmp');
+
+Commentaries:
+- Based on https://github.com/Rovak/InlineAttachment
+- Multiple images upload not tested
+- Working with default editor and WikiEditor extension
+- Not working with WYSIWYG extension (WYSIWYG using CKEditor functionality for this)
+- Do not forget disable SELinux. Else you will catch exception like "LocalFileLockError" (or work with SELinux by youself)
+- Errors and warnings messages will appear in text editor body

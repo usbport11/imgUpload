@@ -1,0 +1,34 @@
+{
+	"name": "imgUpload",
+	"author": "usbport11",
+	"url": "none",
+	"description": "upload image by drag drop inside article",
+	"version": "0.1",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.32.0"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules/",
+		"remoteExtPath": "imgUpload/modules"
+	},
+	"ResourceModules": {
+		"ext.imgUpload": {
+			"scripts": [
+				"ext.imgUpload.inline-attachment.js",
+				"ext.imgUpload.input.inline-attachment.js",
+				"ext.imgUpload.attach-to-editor.js"
+			]
+		}
+	},
+	"Hooks": {
+		"EditPage::showEditForm:initial": [
+			"imgUploadHooks::editPageShowEditFormInitial"
+		]
+	},
+	"AutoloadClasses": {
+		"imgUploadHooks": "includes/imgUploadHooks.php"
+	},
+	"manifest_version": 1
+}
